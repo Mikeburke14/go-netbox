@@ -1,9 +1,9 @@
 go-netbox 
 =========
 
-[![GoDoc](http://godoc.org/github.com/netbox-community/go-netbox?status.svg)](http://godoc.org/github.com/netbox-community/go-netbox) [![Build Status](https://github.com/netbox-community/go-netbox/workflows/main/badge.svg?branch=master)](https://github.com/netbox-community/go-netbox/actions) [![Report Card](https://goreportcard.com/badge/github.com/netbox-community/go-netbox)](https://goreportcard.com/report/github.com/netbox-community/go-netbox)
+[![GoDoc](http://godoc.org/github.com/mikeburke14/go-netbox?status.svg)](http://godoc.org/github.com/mikeburke14/go-netbox) [![Build Status](https://github.com/mikeburke14/go-netbox/workflows/main/badge.svg?branch=master)](https://github.com/mikeburke14/go-netbox/actions) [![Report Card](https://goreportcard.com/badge/github.com/mikeburke14/go-netbox)](https://goreportcard.com/report/github.com/mikeburke14/go-netbox)
 
-Package `netbox` provides an API 2.0 client for [netbox-community's NetBox](https://github.com/netbox-community/netbox)
+Package `netbox` provides an API 2.0 client for [netbox-community's NetBox](https://github.com/mikeburke14/netbox)
 IPAM and DCIM service.
 
 This package assumes you are using NetBox 2.0, as the NetBox 1.0 API no longer exists.
@@ -16,7 +16,7 @@ configurations you are likely to need while connecting to NetBox. `NewNetboxAt` 
 (including port, if you need it), and `NewNetboxWithAPIKey` allows you to specify both a hostname:port and API token.
 ```golang
 import (
-    "github.com/netbox-community/go-netbox/netbox"
+    "github.com/mikeburke14/go-netbox/netbox"
 )
 ...
     c := netbox.NewNetboxAt("your.netbox.host:8000")
@@ -38,8 +38,8 @@ import (
 	"os"
 
 	httptransport "github.com/go-openapi/runtime/client"
-	"github.com/netbox-community/go-netbox/netbox/client"
-	"github.com/netbox-community/go-netbox/netbox/client/dcim"
+	"github.com/mikeburke14/go-netbox/netbox/client"
+	"github.com/mikeburke14/go-netbox/netbox/client/dcim"
 
 	log "github.com/sirupsen/logrus"
 )
@@ -74,7 +74,7 @@ Go Module support
 
 Go 1.13+
 
-`go get github.com/netbox-community/go-netbox`
+`go get github.com/mikeburke14/go-netbox`
 
 
 More complex client configuration
