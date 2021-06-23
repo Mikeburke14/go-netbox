@@ -107,7 +107,7 @@ type WritableInterface struct {
 
 	// Parent
 	// Required: false
-	Parent *int64 `json:"parent,omitempty"`
+	Parent *NestedInterface `json:"parent,omitempty"`
 
 	// tagged vlans
 	// Unique: true
