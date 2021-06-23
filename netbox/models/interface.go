@@ -103,6 +103,10 @@ type Interface struct {
 	// Min Length: 1
 	Name *string `json:"name"`
 
+	// Parent
+	// Required: false
+	Parent *int64 `json:"parent"`
+
 	// tagged vlans
 	// Unique: true
 	TaggedVlans []*NestedVLAN `json:"tagged_vlans"`
@@ -160,6 +164,10 @@ func (m *Interface) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateName(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateParent(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -338,6 +346,16 @@ func (m *Interface) validateName(formats strfmt.Registry) error {
 
 	return nil
 }
+
+func (m *Interface) validateParent(formats strfmt.Registry) error {
+
+	if err := validate.Required("parent", "body", m.Parent); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 
 func (m *Interface) validateTaggedVlans(formats strfmt.Registry) error {
 
